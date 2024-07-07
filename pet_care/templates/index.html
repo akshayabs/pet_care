@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pet Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='petcare.css') }}">
+</head>
+<body>
+<header class="header">
+    <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-paw"></i> care</a>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">home</a>
+        <a href="#about">about us</a>
+        <a href="#services">services</a>
+        <a href="#plan">plan</a>
+        <a href="{{ url_for('book') }}">book now</a>
+        <a href="#customers">customer's review</a>
+    </nav>
+    <div class="icon">
+        <a href="{{ url_for('login') }}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<section class="home" id="home">
+    <div class="content">
+        <h3><span>Hi</span> Welcome to our pet shop</h3>
+        <a href="#plan">Book now</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="{{ url_for('static', filename='about.png') }}" alt="">
+    </div>
+    <div class="about-text">
+        <h2>About us</h2>
+        <h3>We Listen</h3>
+        <p>to every bark, meow, chirp & word that pets & their people say, to understand what they really need..</p>
+        <h3>We Innovate</h3>
+        <p>With scientific rigor to create products & services that solve real problems.</p>
+        <a href="#" class="btn">Learn More</a>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="heading">
+        <h1>Our services</h1>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="{{ url_for('static', filename='dogboarding.png') }}" alt="">
+            <h3>Dog Boarding</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='catboarding.png') }}" alt="">
+            <h3>Cat Boarding</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='spa_and_grooming.png') }}" alt="">
+            <h3>Spa and Grooming</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='healthy_meals.png') }}" alt="">
+            <h3>Healthy Meals</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='activity.png') }}" alt="">
+            <h3>Activity and Exercise</h3>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='health_care.png') }}" alt="">
+            <h3>Health Care</h3>
+        </div>
+    </div>
+</section>
+
+<section class="plan" id="plan">
+    <h1 class="heading">choose a <span>plan</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <h3 class="title">Pet Care</h3>
+            <h3 class="day">1 Day</h3>
+            <div class="list">
+                <p>pet room <span class="fas fa-check"></span></p>
+                <p>pet grooming <span class="fas fa-check"></span></p>
+                <p>pet exercise <span class="fas fa-check"></span></p>
+                <p>pet meals <span class="fas fa-check"></span></p>
+            </div>
+            <div class="amount"><span>$</span>50</div>
+            <a href="{{ url_for('login') }}" class="btn">Choose Plan</a>
+        </div>
+        <div class="box">
+            <h3 class="title">Pet Care</h3>
+            <h3 class="day">10 Days</h3>
+            <div class="list">
+                <p>pet room <span class="fas fa-check"></span></p>
+                <p>pet grooming <span class="fas fa-check"></span></p>
+                <p>pet exercise <span class="fas fa-check"></span></p>
+                <p>pet meals <span class="fas fa-check"></span></p>
+            </div>
+            <div class="amount"><span>$</span>350</div>
+            <a href="{{ url_for('login') }}" class="btn">Choose Plan</a>
+        </div>
+        <div class="box">
+            <h3 class="title">Pet Care</h3>
+            <h3 class="day">30 Days</h3>
+            <div class="list">
+                <p>pet room <span class="fas fa-check"></span></p>
+                <p>pet grooming <span class="fas fa-check"></span></p>
+                <p>pet exercise <span class="fas fa-check"></span></p>
+                <p>pet meals <span class="fas fa-check"></span></p>
+            </div>
+            <div class="amount"><span>$</span>750</div>
+            <a href="{{ url_for('login') }}" class="btn">Choose Plan</a>
+        </div>
+    </div>
+</section>
+
+<section class="login" id="login">
+    <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login_form" action="{{ url_for('login') }}" method="post" onsubmit="return validateLoginForm()">
+            <div class="font">Email or Phone</div>
+            <input autocomplete="off" type="text" name="email" required>
+            <div id="email_error">Please fill up your Email or Phone</div>
+            <div class="font font2">Password</div>
+            <input type="password" name="password" required>
+            <div id="pass_error">Please fill up your Password</div>
+            <button class="confirm" type="submit">Login</button>
+        </form>
+    </div>
+</section>
+
+
+
+<section class="customers" id="customers">
+    <div class="heading">
+        <h1>Customer's Review</h1>
+    </div>
+    <div class="customers-container">
+        <div class="box">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>We were leaving town for several days and could not find anyone to watch our Boston Terrier. We had heard about The Good Life so we decided to board her there. She had so much fun that when we went to pick her up, she turned around and ran back in to play some more! After getting home, she was konked out within 5 minutes and did not wake up until the next morning! Highly recommend!</p>
+            <img src="{{ url_for('static', filename='review1.png') }}" alt="">
+            <h3>by name, email & name and lastname</h3>
+        </div>
+        <div class="box">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>We love this place, and most importantly, our dog loves it too! Highly recommend! The staff is amazing and take great care of the animals. I'm so glad to have such a great place close to home that we can leave our fur baby when needed.</p>
+            <img src="{{ url_for('static', filename='review2.png') }}" alt="">
+            <h3>by name, email & name and lastname</h3>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <h1>contact us:</h1>
+    <a href="#" class="fab fa-facebook"></a>
+    <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+</footer>
+
+<script src="{{ url_for('static', filename='petcare.js') }}"></script>
+</body>
+</html>

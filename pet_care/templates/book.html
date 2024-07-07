@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Pet Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='petcare.css') }}">
+</head>
+<body>
+<header class="header">
+    <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-paw"></i> care</a>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">home</a>
+        <a href="#about">about us</a>
+        <a href="#services">services</a>
+        <a href="#plan">plan</a>
+        <a href="{{ url_for('book') }}">book now</a>
+        <a href="#customers">customer's review</a>
+    </nav>
+    <div class="icon">
+        <a href="{{ url_for('login') }}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<section class="book" id="book">
+    <div class="container">
+        <form autocomplete="on" action="{{ url_for('book') }}" method="post" onsubmit="return validateBookingForm()">
+            <h1>Book Now..!</h1>
+            <div class="form-group">
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <span>Your Email</span>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <span>Your Pet's Name</span>
+                <input type="text" name="pet_name" placeholder="Enter Your Pet's Name" required>
+            </div>
+            <div class="form-group">
+                <span>Phone Number</span>
+                <input type="tel" name="phone" placeholder="Enter Your Phone Number" required>
+            </div>
+            <div class="form-group">
+                <span>Date of Boarding</span>
+                <input type="date" name="boarding_date" required>
+            </div>
+            <div class="form-group">
+                <span>Your Message</span>
+                <textarea name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            </div>
+            <button class="confirm" type="submit">Book Now</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <h1>contact us:</h1>
+    <a href="#" class="fab fa-facebook"></a>
+    <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+</footer>
+
+<script src="{{ url_for('static', filename='petcare.js') }}"></script>
+</body>
+</html>

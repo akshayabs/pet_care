@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pet Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="header">
+    <a href="{{ url_for('index') }}" class="logo"><i class="fa-solid fa-paw"></i> care</a>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">home</a>
+        <a href="#about">about us</a>
+        <a href="#services">services</a>
+        <a href="#plan">plan</a>
+        <a href="{{ url_for('book') }}">book now</a>
+        <a href="#customers">customer's review</a>
+    </nav>
+    <div class="icon">
+        <a href="{{ url_for('login') }}" class="fas fa-user"></a>
+    </div>
+</header>
+
+<section class="login" id="login">
+    <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login_form" action="{{ url_for('login') }}" method="post" onsubmit="return validateLoginForm()">
+            <div class="font">Email or Phone</div>
+            <input autocomplete="off" type="text" name="email" required>
+            <div id="email_error">Please fill up your Email or Phone</div>
+            <div class="font font2">Password</div>
+            <input type="password" name="password" required>
+            <div id="pass_error">Please fill up your Password</div>
+            <button class="confirm" type="submit">Login</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <h1>contact us:</h1>
+    <a href="#" class="fab fa-facebook"></a>
+    <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+</footer>
+
+<script src="{{ url_for('static', filename='petcare.js') }}"></script>
+</body>
+</html>
